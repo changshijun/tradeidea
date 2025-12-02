@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hyperliquid Physics</title>
+    <link
+     rel="stylesheet"
+     href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    >
+    <style>
+        /* Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .content {
+            margin-top: 20px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .content p {
+            font-size: 18px;
+        }
+
+        .content ul {
+            list-style: disc;
+            margin-left: 40px;
+        }
+
+        /* Floating button */
+        .floating-btn {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background-color: #007BFF;
+            color: white;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .floating-btn:hover {
+            background-color: #0056b3;
+        }
+
+        /* Popup form */
+        .form-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 300px;
+            z-index: 9999;
+        }
+
+        .form-popup input,
+        .form-popup textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-popup button {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .form-popup button:hover {
+            background-color: #218838;
+        }
+        .t-title{font-size: 40px;font-weight: bold;}
+        .content h2{font-size: 18px;}
+        .main-img{text-align: center;margin-top: 2rem;margin-bottom: 2rem;}
+        .main-img img{width:70%;}
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .floating-btn {
+                padding: 12px;
+                font-size: 20px;
+            }
+            .t-title{font-size: 30px;font-weight: bold;}
+            .main-img img{width:80%;}
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Main content -->
+    <div class="container">
+        <h1 class="t-title">Hyperliquid Physics</h1>
+        <div class="main-img"><img src="uni.png"/></div>
+        <div class="content">
+            <p><strong>Hyperliquid</strong> (also known as superfluid) is a unique state of matter that has fascinating properties at extremely low temperatures. Here, we will explore the basics of hyperliquid physics, its properties, applications, and how it has revolutionized modern physics.</p>
+
+            <h2>What is Hyperliquid?</h2>
+            <p>Hyperliquid refers to a phase of matter known as <strong>superfluid</strong>, a state that occurs when a liquid reaches a temperature near absolute zero. At this temperature, the liquid behaves in ways that are contrary to our everyday experiences with fluids. The liquid’s viscosity approaches zero, meaning it can flow without resistance and can even "climb" up the walls of containers in defiance of gravity.</p>
+
+            <h2>Key Properties of Hyperliquid:</h2>
+            <ul>
+                <li><strong>Zero Viscosity:</strong> Superfluids have zero viscosity, which means they can flow without any friction or resistance.</li>
+                <li><strong>Quantum Effects:</strong> Superfluids exhibit quantum mechanical effects, such as quantum vortices, which are rotational flows that occur at very small scales.</li>
+                <li><strong>Thermal Conductivity:</strong> They can conduct heat with unprecedented efficiency, leading to applications in cryogenics and quantum computing.</li>
+                <li><strong>Flow Without Resistance:</strong> In superfluidity, there is no energy loss due to friction, making them ideal for research in low-temperature physics.</li>
+            </ul>
+
+            <h2>Real-World Applications of Hyperliquids</h2>
+            <p>While hyperliquid states are mostly observed in laboratory conditions, they have incredible potential in several fields of science and technology:</p>
+            <ul>
+                <li><strong>Quantum Computing:</strong> Superfluids play an important role in quantum computing by allowing scientists to study phenomena that may lead to the development of more powerful computers.</li>
+                <li><strong>Space Exploration:</strong> The unique properties of superfluids can be used to improve fuel systems for space exploration, ensuring that spacecraft can operate efficiently in low-temperature environments.</li>
+                <li><strong>Medical Research:</strong> Superfluid helium is used in cooling systems for medical devices, such as MRI machines, providing high-efficiency cooling for sensitive equipment.</li>
+            </ul>
+
+            <h2>Famous Experiments and Discoveries</h2>
+            <p>One of the first experiments that demonstrated the superfluidity of helium-4 (the most common isotope of helium) was conducted in 1937 by physicist <strong>John F. Allen</strong> and <strong>Don Misener</strong>. Their research showed that helium-4, when cooled to below 2.17 Kelvin, becomes a superfluid and exhibits strange properties like creeping up the sides of its container.</p>
+            <p>Since then, many other experiments have been conducted to explore superfluidity in different materials, including supercooled gases and quantum fluids.</p>
+        </div>
+    </div>
+
+    <!-- Floating button -->
+    <button class="floating-btn" onclick="toggleForm()">💬</button>
+
+    <!-- Popup form -->
+    <div class="form-popup" id="contactForm">
+        <h3>Contact Us</h3>
+        <form id="contact-form">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Leave your message here" rows="4" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <script>
+        // Toggle the form visibility
+        function toggleForm() {
+            const form = document.getElementById('contactForm');
+            // Check if the form is currently displayed
+            if (form.style.display === 'none' || form.style.display === '') {
+                form.style.display = 'block';  // Show the form
+            } else {
+                form.style.display = 'none';  // Hide the form
+            }
+        }
+
+        // Form submission handler
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent page reload
+            alert('Thank you for your submission! We will contact you soon.');
+            toggleForm(); // Close the form
+        });
+    </script>
+
+</body>
+</html>
